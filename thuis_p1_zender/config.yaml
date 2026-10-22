@@ -1,0 +1,26 @@
+name: Thuis P1-zender
+version: "0.1.0"
+slug: thuis_p1_zender
+description: Stuurt HomeWizard P1-metingen naar BigQuery, voor de gehoste Thuis-app
+url: https://github.com/sjoerdvs/thuis-ha-addons/tree/main/thuis_p1_zender
+arch:
+  - aarch64
+  - amd64
+startup: application
+boot: auto
+options:
+  p1_host: ""
+  service_account_json: ""
+  gcp_project: ""
+  bq_dataset: thuis
+  bq_tabel: homewizard_meting
+  meetinterval_s: 10
+  uploadinterval_s: 60
+schema:
+  p1_host: str
+  service_account_json: password
+  gcp_project: str
+  bq_dataset: str
+  bq_tabel: str
+  meetinterval_s: int(5,300)
+  uploadinterval_s: int(30,900)

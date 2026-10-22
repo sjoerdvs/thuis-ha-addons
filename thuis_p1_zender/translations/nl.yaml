@@ -1,0 +1,18 @@
+configuration:
+  p1_host:
+    name: IP-adres van de P1-meter
+    description: Bijvoorbeeld 192.168.1.50. Geef de meter in je router een vast adres.
+  service_account_json:
+    name: Sleutel van het serviceaccount
+    description: De inhoud van het JSON-sleutelbestand uit Google Cloud (op één regel).
+  gcp_project:
+    name: Google Cloud-project
+    description: Project-ID, bijvoorbeeld mijn-project-123.
+  bq_dataset:
+    name: BigQuery-dataset
+  bq_tabel:
+    name: BigQuery-tabel
+  meetinterval_s:
+    name: Meetinterval (seconden)
+  uploadinterval_s:
+    name: Verzendinterval (seconden)

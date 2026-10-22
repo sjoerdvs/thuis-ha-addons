@@ -1,0 +1,5 @@
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.json
+!thuis_p1_zender/**/*.json

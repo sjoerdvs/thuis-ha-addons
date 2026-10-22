@@ -1,0 +1,18 @@
+configuration:
+  p1_host:
+    name: P1 meter IP address
+    description: For example 192.168.1.50. Give the meter a fixed address in your router.
+  service_account_json:
+    name: Service account key
+    description: The contents of the JSON key file from Google Cloud (on one line).
+  gcp_project:
+    name: Google Cloud project
+    description: Project ID, for example my-project-123.
+  bq_dataset:
+    name: BigQuery dataset
+  bq_tabel:
+    name: BigQuery table
+  meetinterval_s:
+    name: Measurement interval (seconds)
+  uploadinterval_s:
+    name: Upload interval (seconds)
