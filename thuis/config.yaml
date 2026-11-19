@@ -1,0 +1,39 @@
+# Thuis-EMS als Home Assistant-add-on. Het image bouwt GitHub Actions (.github/workflows/ha-addon.yml);
+# verhoog `version` om een nieuwe versie uit te brengen.
+name: Thuis
+version: "1.0.2"
+slug: thuis
+description: Thuis-EMS op je eigen Home Assistant (Cloudflare Access voor het inloggen)
+url: https://github.com/sjoerdvs/Thuis-EMS
+arch:
+  - aarch64
+  - amd64
+image: ghcr.io/sjoerdvs/thuis-ha-{arch}
+init: false
+startup: application
+boot: auto
+# Geen poort naar buiten: de Cloudflared-add-on bereikt Thuis via het interne netwerk van Home Assistant.
+ports:
+  8080/tcp: null
+ports_description:
+  8080/tcp: Thuis (alleen nodig zonder Cloudflared-add-on; laat leeg)
+# /config = addon_configs/<id>_thuis: database en kluis, via Samba te bereiken en mee in elke back-up.
+map:
+  - addon_config:rw
+# Tijdens een back-up even stoppen: dan is het DuckDB-bestand altijd heel.
+backup: cold
+options:
+  cf_access_team: ""
+  cf_access_aud: ""
+  toegestane_emails: []
+  alleen_kijken: []
+  extra_omgeving: []
+schema:
+  cf_access_team: str
+  cf_access_aud: str
+  toegestane_emails:
+    - email
+  alleen_kijken:
+    - email
+  extra_omgeving:
+    - match(^[A-Z][A-Z0-9_]*=.*$)
