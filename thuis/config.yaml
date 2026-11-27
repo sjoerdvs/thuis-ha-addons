@@ -1,7 +1,7 @@
 # Thuis-EMS als Home Assistant-add-on. Het image bouwt GitHub Actions (.github/workflows/ha-addon.yml);
 # de versie zet de workflow zelf (1.0.<runnummer>) bij het publiceren naar thuis-ha-addons.
 name: Thuis
-version: "1.0.17"
+version: "1.0.18"
 slug: thuis
 description: Thuis-EMS op je eigen Home Assistant (Cloudflare Access voor het inloggen)
 url: https://github.com/sjoerdvs/Thuis-EMS
